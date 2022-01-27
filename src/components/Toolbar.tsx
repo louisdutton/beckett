@@ -1,35 +1,50 @@
 import { EditorState } from "draft-js";
+import { Chat, MagicWand, CaretRight } from "phosphor-react";
+import { useState } from "react";
 
-OPTIONS = [];
+interface Block {
+	name: string;
+}
+
+const BLOCKS: Block[] = [
+	{
+		name: "hello",
+	},
+];
 
 interface Props {
 	editorState: EditorState;
-	onToggle: () => void;
+	// onToggle: () => void;
 }
 
-const Toolbar = ({ editorState, setBlock }: Props) => {
+const Toolbar = ({ editorState }: Props) => {
+	const [open, setOpen] = useState(false);
 	const selection = editorState.getSelection();
 	const blockType = editorState
 		.getCurrentContent()
 		.getBlockForKey(selection.getStartKey())
 		.getType();
 
+	const openStyles = open ? "w-20" : "w-0";
+
 	return (
-		<div>
-			<span className="RichEditor-controls">
-				{OPTIONS.map((type) => {
-					return (
-						<BlockStyleButton
-							active={type.style === blockType}
-							label={type.label}
-							onToggle={onToggle}
-							style={type.style}
-							key={type.label}
-							type={type}
-						/>
-					);
-				})}
-			</span>
+		<div
+			className={`relative p-4 bg-white shadow-md transition-all duration-300 print:hidden w-20`}>
+			<ul className="flex flex-col items-center gap-2">
+				{BLOCKS.map((block) => (
+					<li>
+						<button className="flex items-center justify-center w-12 h-12 rounded-lg hover:bg-neutral-100 text-neutral-400">
+							<Chat size={30} weight="fill" />
+						</button>
+					</li>
+				))}
+			</ul>
+
+			{/* <button
+				onClick={() => setOpen((open) => !open)}
+				className="absolute flex items-center justify-center p-4 bg-white -right-6 top-1/2 rounded-r-xl text-neutral-500">
+				<CaretRight size={24} weight="bold" />
+			</button> */}
 		</div>
 	);
 };

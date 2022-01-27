@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Editor, EditorState, RichUtils } from "draft-js";
 import Toolbar from "./components/Toolbar";
 import blockRenderFn from "./components/blockRenderer";
+import CharacterName from "./components/Character";
+import Line from "./components/Line";
 
 // const blockRenderMap = Immutable.Map({
 //   'MyCustomBlock': {
@@ -43,16 +45,14 @@ const App = () => {
 	}, []);
 
 	return (
-		<div className="h-screen p-16 text-3xl font-mono">
-			{/* <Toolbar editorState={editorState} setBlock={setBlock} /> */}
-			<Editor
-				editorState={editorState}
-				onChange={setEditorState}
-				handleKeyCommand={handleKeyCommand}
-				spellCheck={true}
-				ref={editorRef}
-				blockRendererFn={blockRenderFn}
-			/>
+		<div className="flex h-screen bg-neutral-100">
+			<Toolbar editorState={editorState} />
+			<div className="flex flex-col w-full gap-4 p-16 font-mono text-2xl">
+				<Line />
+				<Line />
+				<Line />
+				<Line />
+			</div>
 		</div>
 	);
 };
