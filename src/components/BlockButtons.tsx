@@ -9,13 +9,13 @@ const BlockButtons = () => {
 		<div className="flex flex-col gap-2 sm:flex-row print:hidden justify-evenly">
 			<button
 				onClick={() => dispatch(add())}
-				className="flex items-center justify-center w-full gap-2 px-5 py-3 text-white uppercase transition-colors bg-blue-400 rounded hover:bg-blue-500">
-				<Chat size={20} /> Line
+				className="flex items-center justify-center w-full gap-2 px-5 py-3 text-white uppercase transition-colors rounded shadow-md bg-sky-500 hover:bg-sky-600">
+				<Chat size={24} /> Line
 			</button>
 			<button
 				onClick={() => dispatch(add())}
-				className="flex items-center justify-center w-full gap-2 px-5 py-3 text-white uppercase transition-colors bg-purple-400 rounded hover:bg-purple-500">
-				<Sword size={20} /> Action
+				className="flex items-center justify-center w-full gap-2 px-5 py-3 text-white uppercase transition-colors rounded shadow-md bg-violet-500 hover:bg-violet-600">
+				<Sword size={24} /> Action
 			</button>
 		</div>
 	);

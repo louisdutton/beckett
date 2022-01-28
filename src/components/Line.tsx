@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Textarea from "react-autosize-textarea";
 import { useAppDispatch, useAppSelector } from "../lib/hooks";
 import { add, remove } from "../lib/reducers/blocks";
+import Dropdown from "./Dropdown";
 
 const Line = () => {
 	const {
@@ -35,19 +36,13 @@ const Line = () => {
 	};
 
 	return (
-		<div className="flex items-start justify-between gap-20">
-			<button className="inline-block px-2 bg-transparent rounded appearance-none cursor-pointer ">
-				<ul>
-					{characters.map((person, id) => (
-						<li key={id} value={person} className="apperance-none">
-							{person}:
-						</li>
-					))}
-				</ul>
-			</button>
+		<div className="flex items-start justify-between">
+			<div className="w-[2in]">
+				<Dropdown<string> options={characters} />
+			</div>
 			<Textarea
 				ref={inputRef}
-				className="flex-1 py-1 bg-transparent border-b-2 resize-none print:p-0 focus:outline-none focus:border-black print:border-none"
+				className="flex-1 px-5 py-3 bg-transparent bg-gray-200 rounded resize-none focus:ring-2 ring-sky-500 focus:shadow-lg print:p-0 focus:outline-none focus:bg-white placeholder:text-neutral-400"
 				onKeyDown={keyHandler}
 				onChange={handleChange}
 				placeholder="Line..."
