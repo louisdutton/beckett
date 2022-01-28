@@ -12,9 +12,9 @@ const App = () => {
 		<div className="h-screen font-mono text-xl bg-neutral-100 print:text-base">
 			<TitlePage metadata={metadata} />
 
-			<ul className="flex flex-col w-full p-16 leading-5 transition-all duration-300 print:block">
+			<ul className="flex flex-col w-full p-16 transition-all duration-300 print:leading-4 print:block">
 				{blocks.map((block, i) => (
-					<li key={i} className="mb-4">
+					<li key={i} className="mb-4 print:m-0">
 						<Line />
 					</li>
 				))}

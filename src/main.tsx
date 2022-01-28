@@ -2,13 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import BlockProvider from "./components/BlockContext";
+import { Provider } from "react-redux";
+import store from "./lib/store";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<BlockProvider>
+		<Provider store={store}>
 			<App />
-		</BlockProvider>
+		</Provider>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

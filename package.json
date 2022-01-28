@@ -7,11 +7,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.7.1",
     "draft-js": "^0.11.7",
     "phosphor-react": "^1.4.0",
     "react": "^17.0.2",
     "react-autosize-textarea": "^7.1.0",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2"
   },
   "devDependencies": {
     "@types/draft-js": "^0.11.8",

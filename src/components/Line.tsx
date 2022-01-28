@@ -1,43 +1,53 @@
 import { useEffect, useRef, useState } from "react";
 import Textarea from "react-autosize-textarea";
-import { useBlocks } from "./BlockContext";
-
-const people = ["LUIZ", "CASILDA", "DUKE"];
-
-interface Props {}
+import { useAppDispatch, useAppSelector } from "../lib/hooks";
+import { add, remove } from "../lib/reducers/blocks";
 
 const Line = () => {
-	const { blocks, addBlock, removeBlock } = useBlocks();
+	const {
+		blocks,
+		metadata: { characters },
+	} = useAppSelector((state) => state);
+	const dispatch = useAppDispatch();
+	const inputRef = useRef<HTMLTextAreaElement>(null);
 
 	const keyHandler = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
 		switch (e.code) {
 			case "Enter": {
-				addBlock();
+				dispatch(add());
 				e.preventDefault();
 				break;
 			}
 			case "Backspace": {
-				if (e.metaKey && blocks.length > 1) removeBlock();
+				if (blocks.length > 1 && inputRef.current?.value === "")
+					dispatch(remove());
 				break;
 			}
 		}
 	};
 
-	const handleChange = (e: React.FormEvent<HTMLTextAreaElement>) => {
-		const text = e.currentTarget.value;
-		e.currentTarget.value.replace(/\[(.+?)\]/g, (c) => c.toUpperCase());
+	//FIXME: this doesnt work
+	const handleChange = (e: any) => {
+		if (!inputRef.current) return;
+		inputRef.current.value = inputRef.current.value.replace(/\[(.+?)\]/g, (c) =>
+			c.toUpperCase()
+		);
 	};
 
 	return (
 		<div className="flex items-start justify-between gap-20">
-			<select className="inline-block px-2 bg-transparent rounded appearance-none cursor-pointer ">
-				{people.map((person, id) => {
-					// const name = person.toUpperCase();
-					return <option key={id} value={person} label={person + ":"} />;
-				})}
-			</select>
+			<button className="inline-block px-2 bg-transparent rounded appearance-none cursor-pointer ">
+				<ul>
+					{characters.map((person, id) => (
+						<li key={id} value={person} className="apperance-none">
+							{person}:
+						</li>
+					))}
+				</ul>
+			</button>
 			<Textarea
-				className="flex-1 bg-transparent border-b-2 resize-none focus:outline-none focus:border-black print:border-none"
+				ref={inputRef}
+				className="flex-1 py-1 bg-transparent border-b-2 resize-none print:p-0 focus:outline-none focus:border-black print:border-none"
 				onKeyDown={keyHandler}
 				onChange={handleChange}
 				placeholder="Line..."
