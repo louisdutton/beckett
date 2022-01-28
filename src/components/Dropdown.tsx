@@ -13,8 +13,6 @@ const Dropdown = <T,>({ options }: Props<T>) => {
 		value: T
 	) => {
 		setCurrent(value);
-		console.log(value);
-
 		buttonRef.current?.blur();
 	};
 
@@ -24,7 +22,7 @@ const Dropdown = <T,>({ options }: Props<T>) => {
 				tabIndex={-1}
 				ref={buttonRef}
 				id="dropdownButton"
-				className="block px-5 py-3 uppercase bg-transparent rounded appearance-none cursor-pointer print:p-0 group hover:bg-white">
+				className="px-5 py-3 uppercase bg-transparent rounded appearance-none cursor-pointer print:p-0 group hover:bg-white">
 				{current}:
 				<div className="absolute top-0 left-0 z-10 hidden overflow-hidden bg-white rounded shadow-md group-focus:block">
 					<ul aria-labelledby="dropdownButton">
