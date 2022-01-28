@@ -1,23 +1,25 @@
-import { createContext, useEffect, useRef, useState } from "react";
-import Toolbar from "./components/Toolbar";
 import Line from "./components/Line";
-import BlockProvider, { useBlocks } from "./components/BlockContext";
+import { Chat, Sword } from "phosphor-react";
+import { useAppSelector } from "./lib/hooks";
+import { add } from "./lib/reducers/blocks";
+import TitlePage from "./components/TitlePage";
+import BlockButtons from "./components/BlockButtons";
 
 const App = () => {
-	const { blocks } = useBlocks();
+	const { blocks, metadata } = useAppSelector((state) => state);
 
 	return (
-		<div className="flex h-screen bg-neutral-100">
-			<Toolbar />
-			<div className="flex flex-col w-full gap-4 p-16 font-mono text-xl print:text-base">
-				<ul>
-					{blocks.map(() => (
-						<li>
-							<Line />
-						</li>
-					))}
-				</ul>
-			</div>
+		<div className="h-screen font-mono text-xl bg-neutral-100 print:text-base">
+			<TitlePage metadata={metadata} />
+
+			<ul className="flex flex-col w-full p-16 leading-5 transition-all duration-300 print:block">
+				{blocks.map((block, i) => (
+					<li key={i} className="mb-4">
+						<Line />
+					</li>
+				))}
+				<BlockButtons />
+			</ul>
 		</div>
 	);
 };
