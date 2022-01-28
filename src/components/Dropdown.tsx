@@ -22,9 +22,9 @@ const Dropdown = <T,>({ options }: Props<T>) => {
 				tabIndex={-1}
 				ref={buttonRef}
 				id="dropdownButton"
-				className="px-5 py-3 uppercase bg-transparent rounded appearance-none cursor-pointer print:p-0 group hover:bg-white">
+				className="px-5 py-3 uppercase bg-transparent rounded appearance-none cursor-pointer focus:outline-none print:p-0 group hover:bg-white">
 				{current}:
-				<div className="absolute top-0 left-0 z-10 hidden overflow-hidden bg-white rounded shadow-md group-focus:block">
+				<div className="absolute top-0 left-0 z-10 hidden overflow-hidden bg-white rounded shadow-md group-focus:block ring-2 ring-blue-500">
 					<ul aria-labelledby="dropdownButton">
 						{options.map((value, i) => (
 							<li

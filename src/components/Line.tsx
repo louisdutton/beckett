@@ -20,20 +20,28 @@ const Line = () => {
 				break;
 			}
 			case "Backspace": {
-				if (blocks.length > 1 && inputRef.current?.value === "")
-					dispatch(remove());
+				if (blocks.length > 1 && e.metaKey) dispatch(remove());
+				break;
+			}
+			// TODO: implement charcter switching key bindings
+			case "ArrowUp": {
+				if (e.altKey) console.log("");
+				break;
+			}
+			case "ArrowDown": {
+				if (e.altKey) console.log("");
 				break;
 			}
 		}
 	};
 
 	//FIXME: this doesnt work
-	const handleChange = (e: any) => {
-		if (!inputRef.current) return;
-		inputRef.current.value = inputRef.current.value.replace(/\[(.+?)\]/g, (c) =>
-			c.toUpperCase()
-		);
-	};
+	// const handleChange = (e: any) => {
+	// 	if (!inputRef.current) return;
+	// 	inputRef.current.value = inputRef.current.value.replace(/\[(.+?)\]/g, (c) =>
+	// 		c.toUpperCase()
+	// 	);
+	// };
 
 	return (
 		<div className="flex items-start justify-between">
@@ -42,9 +50,9 @@ const Line = () => {
 			</div>
 			<Textarea
 				ref={inputRef}
-				className="flex-1 px-5 py-3 bg-transparent bg-gray-200 rounded resize-none focus:ring-2 ring-sky-500 focus:shadow-lg print:p-0 focus:outline-none focus:bg-white placeholder:text-neutral-400"
+				className="flex-1 px-5 py-3 transition-transform bg-transparent bg-gray-200 rounded resize-none focus:ring-2 ring-blue-500 focus:shadow-lg print:p-0 focus:outline-none focus:bg-white placeholder:text-neutral-400 ease-in-out duration-200 focus:scale-[102%]"
 				onKeyDown={keyHandler}
-				onChange={handleChange}
+				// onChange={handleChange}
 				placeholder="Line..."
 				autoFocus={true}
 			/>

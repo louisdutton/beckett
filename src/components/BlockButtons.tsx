@@ -9,7 +9,7 @@ const BlockButtons = () => {
 		<div className="flex flex-col gap-2 sm:flex-row print:hidden justify-evenly">
 			<button
 				onClick={() => dispatch(add())}
-				className="flex items-center justify-center w-full gap-2 px-5 py-3 text-white uppercase transition-colors rounded shadow-md bg-sky-500 hover:bg-sky-600">
+				className="flex items-center justify-center w-full gap-2 px-5 py-3 text-white uppercase transition-colors bg-blue-500 rounded shadow-md hover:bg-blue-600">
 				<Chat size={24} /> Line
 			</button>
 			<button

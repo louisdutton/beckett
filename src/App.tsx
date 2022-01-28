@@ -9,10 +9,10 @@ const App = () => {
 	const { blocks, metadata } = useAppSelector((state) => state);
 
 	return (
-		<div className="h-screen font-mono text-xl font-light bg-gray-50 print:text-xs">
+		<div className="h-screen font-mono text-xl font-light bg-gray-50 print:text-[12pt]">
 			<TitlePage metadata={metadata} />
 
-			<ul className="w-full p-[1in] transition-all duration-300 print:leading-4 print:block">
+			<ul className="w-full p-8 sm:p-16 prin:p-[1in] print:leading-4 print:block">
 				{blocks.map((block, i) => (
 					<li key={i} className="mb-4 print:m-0">
 						<Line />
