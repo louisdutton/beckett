@@ -1,4 +1,4 @@
-import { List, UserList, Gear, MusicNote } from "phosphor-react";
+import { UserList, Gear, MusicNote } from "phosphor-react";
 import IconButton from "./IconButton";
 
 interface Props {
@@ -9,26 +9,21 @@ interface Props {
 const Toolbar = () => {
 	return (
 		<div
-			className={`p-2 w-screen h-20 sm:h-screen sm:w-20 bg-blue-500 shadow-md print:hidden`}>
+			className={`p-2 w-screen h-16 sm:h-screen sm:w-16 bg-blue-500 shadow-md print:hidden`}>
 			<ul className="flex flex-col items-center justify-center h-full gap-2">
 				<li>
 					<IconButton>
-						<List size={30} weight="fill" />
+						<Gear size={24} weight="fill" />
 					</IconButton>
 				</li>
 				<li>
 					<IconButton>
-						<Gear size={30} weight="fill" />
+						<UserList size={24} weight="fill" />
 					</IconButton>
 				</li>
 				<li>
 					<IconButton>
-						<UserList size={30} weight="fill" />
-					</IconButton>
-				</li>
-				<li>
-					<IconButton>
-						<MusicNote size={30} weight="fill" />
+						<MusicNote size={24} weight="fill" />
 					</IconButton>
 				</li>
 			</ul>
