@@ -44,8 +44,8 @@ const Line = () => {
 	// };
 
 	return (
-		<div className="flex items-start justify-between">
-			<div className="w-[2in]">
+		<div className="flex items-start justify-between peer">
+			<div className="w-[1.5in] print:w-[2in] peer-focus:bg-black">
 				<Dropdown<string> options={characters} />
 			</div>
 			<Textarea

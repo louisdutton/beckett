@@ -10,12 +10,12 @@ const BlockButtons = () => {
 			<button
 				onClick={() => dispatch(add())}
 				className="flex items-center justify-center w-full gap-2 px-5 py-3 text-white uppercase transition-colors bg-blue-500 rounded shadow-md hover:bg-blue-600">
-				<Chat size={24} /> Line
+				<Chat size={28} weight="fill" /> Line
 			</button>
 			<button
 				onClick={() => dispatch(add())}
-				className="flex items-center justify-center w-full gap-2 px-5 py-3 text-white uppercase transition-colors rounded shadow-md bg-violet-500 hover:bg-violet-600">
-				<Sword size={24} /> Action
+				className="flex items-center justify-center w-full gap-2 px-5 py-3 text-blue-500 uppercase transition-colors border-2 border-blue-500 rounded hover:border-blue-600">
+				<Sword size={28} /> Action
 			</button>
 		</div>
 	);
