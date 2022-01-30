@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Textarea from "react-autosize-textarea";
 import { useAppDispatch, useAppSelector } from "../lib/hooks";
 import { add, remove } from "../lib/reducers/blocks";
+import metadata from "../lib/reducers/metadata";
 import Dropdown from "./Dropdown";
 
 const Line = () => {
@@ -44,18 +45,23 @@ const Line = () => {
 	// };
 
 	return (
-		<div className="flex items-start justify-between peer">
-			<div className="w-[1.5in] print:w-[2in] peer-focus:bg-black">
+		<div className="relative">
+			{/* <div className="w-[1.5in] print:w-[2in] peer-focus:bg-black">
 				<Dropdown<string> options={characters} />
-			</div>
-			<Textarea
-				ref={inputRef}
-				className="flex-1 px-5 py-3 transition-transform bg-transparent bg-gray-200 rounded resize-none focus:ring-2 ring-primary-500 focus:shadow-lg print:p-0 focus:outline-none focus:bg-white placeholder:text-neutral-400 ease-in-out duration-200 focus:scale-[101%]"
-				onKeyDown={keyHandler}
-				// onChange={handleChange}
-				placeholder="Line..."
-				autoFocus={true}
-			/>
+			</div> */}
+			<fieldset className="transition-all border-2 rounded-lg group border-slate-200 bg-slate-100 character-field focus-within:border-primary-500 focus-within:scale-[103%] ease-in-out focus-within:bg-white">
+				<legend className="px-2 ml-4 font-bold uppercase text-slate-400 group-focus-within:text-primary-500">
+					{characters[0]}
+				</legend>
+				<Textarea
+					ref={inputRef}
+					className="flex-1 w-full px-5 pb-1 bg-transparent resize-none focus:outline-none print:p-0 placeholder:text-slate-400"
+					onKeyDown={keyHandler}
+					// onChange={handleChange}
+					placeholder="Line..."
+					autoFocus={true}
+				/>
+			</fieldset>
 		</div>
 	);
 };

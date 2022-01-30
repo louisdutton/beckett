@@ -15,3 +15,7 @@ body {
 	width: 100vw;
 	min-height: calc(100vh - 4rem);
 }
+/* 
+input:focus ~ fieldset {
+	@apply border-primary-500;
+} */

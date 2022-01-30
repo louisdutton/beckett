@@ -30,7 +30,7 @@ const Home: NextPage = () => {
 					<div className="w-full p-8 print:p-[1in] print:leading-4 print:block max-w-3xl print:max-w-none">
 						<ul className="">
 							{blocks.map((block, i) => (
-								<li key={i} className="mb-4 print:m-0">
+								<li key={i} className="mb-8 print:m-0">
 									<Line />
 								</li>
 							))}
