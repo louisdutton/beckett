@@ -5,6 +5,7 @@ import { useAppSelector } from "../lib/hooks";
 import TitlePage from "../components/TitlePage";
 import BlockButtons from "../components/BlockButtons";
 import Toolbar from "../components/Toolbar";
+import StatusBar from "../components/StatusBar";
 
 const Home: NextPage = () => {
 	const { blocks, metadata } = useAppSelector((state) => state);
@@ -20,8 +21,9 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
+			<Toolbar />
+
 			<main className="w-screen min-h-screen">
-				<Toolbar />
 				<div className="font-mono text-lg font-light flex-1 print:text-[12pt] flex justify-center">
 					<TitlePage metadata={metadata} />
 
@@ -38,7 +40,7 @@ const Home: NextPage = () => {
 				</div>
 			</main>
 
-			<footer></footer>
+			<StatusBar />
 		</>
 	);
 };

@@ -50,7 +50,7 @@ const Line = () => {
 			</div>
 			<Textarea
 				ref={inputRef}
-				className="flex-1 px-5 py-3 transition-transform bg-transparent bg-gray-200 rounded resize-none focus:ring-2 ring-blue-500 focus:shadow-lg print:p-0 focus:outline-none focus:bg-white placeholder:text-neutral-400 ease-in-out duration-200 focus:scale-[101%]"
+				className="flex-1 px-5 py-3 transition-transform bg-transparent bg-gray-200 rounded resize-none focus:ring-2 ring-primary-500 focus:shadow-lg print:p-0 focus:outline-none focus:bg-white placeholder:text-neutral-400 ease-in-out duration-200 focus:scale-[101%]"
 				onKeyDown={keyHandler}
 				// onChange={handleChange}
 				placeholder="Line..."

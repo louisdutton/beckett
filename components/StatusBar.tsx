@@ -6,17 +6,32 @@ interface Props {
 	// onToggle: () => void;
 }
 
-const Toolbar = () => {
+const StatusBar = () => {
 	// const {} = useSelector((state) => state.)
 	const saved = true;
+	const diff = Math.abs(new Date().valueOf() - new Date().valueOf());
+	const minutes = Math.floor(diff / 1000 / 60);
 
 	return (
-		<div className="fixed top-0 left-0 z-50 w-screen p-2 font-mono shadow-lg bg-slate-300 print:hidden">
-			<div className="flex items-center justify-between">
-				<p className="flex gap-2 px-4 text-sm text-slate-500"></p>
+		<footer className="fixed bottom-0 left-0 z-50 w-screen p-2 font-mono shadow-lg bg-slate-300 print:hidden">
+			<div className="flex items-center justify-between px-4 text-sm text-slate-500">
+				<div className="flex gap-4">
+					{saved ? (
+						<>
+							<CloudCheck size={20} />
+							<p>Last saved: {minutes} minutes ago</p>
+						</>
+					) : (
+						<>
+							<ArrowClockwise className="animate-spin" size={20} />
+							<p>saving...</p>
+						</>
+					)}
+				</div>
+				<p>words: 50</p>
 			</div>
-		</div>
+		</footer>
 	);
 };
 
-export default Toolbar;
+export default StatusBar;

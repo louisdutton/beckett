@@ -11,9 +11,9 @@ const Toolbar = () => {
 	// const {} = useSelector((state) => state.)
 
 	return (
-		<div className="sticky top-0 left-0 z-50 w-screen p-2 font-mono bg-blue-500 shadow-lg print:hidden">
+		<header className="sticky top-0 left-0 z-50 w-screen p-2 font-mono shadow-lg bg-primary-500 print:hidden">
 			<div className="flex items-center justify-between">
-				<p className="flex gap-2 px-4 text-sm text-blue-300 uppercase">
+				<p className="flex gap-2 px-4 text-sm uppercase text-primary-300">
 					<a href="#act-1" className="hover:text-white">
 						Title
 					</a>
@@ -51,7 +51,7 @@ const Toolbar = () => {
 					</ul>
 				</nav>
 			</div>
-		</div>
+		</header>
 	);
 };
 
