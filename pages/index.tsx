@@ -23,7 +23,7 @@ const Home: NextPage = () => {
 
 			<Toolbar />
 
-			<main className="w-screen min-h-screen">
+			<main className="content-area">
 				<div className="font-mono text-lg font-light flex-1 print:text-[12pt] flex justify-center">
 					<TitlePage metadata={metadata} />
 
