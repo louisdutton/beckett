@@ -11,23 +11,23 @@ const Toolbar = () => {
 	const { title } = useAppSelector((state) => state.metadata);
 
 	return (
-		<header className="sticky top-0 left-0 z-50 w-screen p-2 font-mono shadow-lg bg-primary-500 print:hidden">
+		<header className="sticky top-0 left-0 z-50 w-screen px-4 py-2 font-mono bg-white shadow-md print:hidden">
 			<div className="flex items-center justify-between">
-				<p className="flex gap-2 px-4 text-sm uppercase text-primary-300">
-					<a href="#act-1" className="hover:text-white">
+				<p className="flex gap-2 px-4 text-sm text-slate-500">
+					<a href="#act-1" className="transition-colors hover:text-black">
 						{title}
 					</a>
 					<p>/</p>
-					<a href="#act-1" className="hover:text-white">
+					<a href="#act-1" className="transition-colors hover:text-black">
 						Act I
 					</a>
 					<p>/</p>
-					<a href="#act-1" className="hover:text-white">
+					<a href="#act-1" className="transition-colors hover:text-black">
 						Scene 1
 					</a>
 				</p>
 				<nav>
-					<ul className="flex items-center justify-center h-full gap-2">
+					<ul className="flex items-center justify-center h-full gap-4">
 						<li>
 							<IconButton>
 								<Eye size={24} weight="fill" />

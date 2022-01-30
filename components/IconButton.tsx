@@ -4,7 +4,7 @@ interface Props {
 
 const IconButton = ({ children }: Props) => {
 	return (
-		<button className="flex items-center justify-center p-2 transition-colors rounded-lg text-primary-300 hover:bg-primary-400 hover:text-primary-200">
+		<button className="flex items-center justify-center p-2 transition-colors rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600">
 			{children}
 		</button>
 	);
