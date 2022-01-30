@@ -9,7 +9,7 @@ export interface MetaData {
 }
 
 const initialState: MetaData = {
-	title: "Title",
+	title: "Untitled",
 	author: "Author",
 	email: "example@gmail.com",
 	phone: "000-000-000",

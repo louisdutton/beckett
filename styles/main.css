@@ -6,3 +6,7 @@
 	size: auto;
 	margin: 0mm;
 }
+
+body {
+	@apply bg-gray-50;
+}
