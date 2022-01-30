@@ -8,8 +8,7 @@ interface Props {
 
 const Toolbar = () => {
 	return (
-		<div
-			className={`p-2 w-screen h-16 sm:h-screen sm:w-16 bg-blue-500 shadow-md print:hidden`}>
+		<div className="sticky top-0 left-0 w-screen h-16 p-2 bg-blue-500 shadow-md sm:h-screen sm:w-16 print:hidden">
 			<ul className="flex flex-col items-center justify-center h-full gap-2">
 				<li>
 					<IconButton>
