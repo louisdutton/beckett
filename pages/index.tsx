@@ -24,18 +24,18 @@ const Home: NextPage = () => {
 			<Toolbar />
 
 			<main className="content-area">
-				<div className="font-mono text-lg font-light flex-1 print:text-[12pt] flex justify-center">
+				<div className="font-mono text-lg font-light flex-1 print:text-[12pt] flex justify-center print:block">
 					<TitlePage metadata={metadata} />
 
-					<div className="w-full p-8 print:p-[1in] print:leading-4 print:block max-w-3xl print:max-w-none">
-						<ul className="">
+					<div className="w-full p-8 print:p-[1in] print:leading-4  max-w-3xl print:max-w-none">
+						<ul>
 							{blocks.map((block, i) => (
-								<li key={i} className="mb-2 print:m-0">
+								<li key={i} className="mb-2 print:mb-4">
 									<Line />
 								</li>
 							))}
-							<BlockButtons />
 						</ul>
+						<BlockButtons />
 					</div>
 				</div>
 			</main>
