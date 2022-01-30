@@ -20,12 +20,12 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<main className="flex flex-col w-screen min-h-screen">
+			<main className="w-screen min-h-screen">
 				<Toolbar />
-				<div className="font-mono text-lg font-light flex-1 print:text-[12pt]">
+				<div className="font-mono text-lg font-light flex-1 print:text-[12pt] flex justify-center">
 					<TitlePage metadata={metadata} />
 
-					<div className="w-full p-8 print:p-[1in] print:leading-4 print:block">
+					<div className="w-full p-8 print:p-[1in] print:leading-4 print:block max-w-3xl print:max-w-none">
 						<ul className="">
 							{blocks.map((block, i) => (
 								<li key={i} className="mb-4 print:m-0">

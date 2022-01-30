@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx}",
@@ -8,6 +10,9 @@ module.exports = {
 			fontFamily: {
 				mono: ["Courier", "monospace"],
 			},
+      colors: {
+        primary: colors.blue;
+      }
 		},
 	},
 	plugins: [],
