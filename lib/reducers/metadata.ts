@@ -5,7 +5,12 @@ export interface MetaData {
 	author: string;
 	email: string;
 	phone: string;
-	characters: string[];
+	characters: Character[];
+}
+
+export interface Character {
+	name: string;
+	color: string;
 }
 
 const initialState: MetaData = {
@@ -13,7 +18,16 @@ const initialState: MetaData = {
 	author: "Author",
 	email: "example@gmail.com",
 	phone: "000-000-000",
-	characters: ["Luiz", "Casilda"],
+	characters: [
+		{
+			name: "Luiz",
+			color: "",
+		},
+		{
+			name: "Casilda",
+			color: "",
+		},
+	],
 };
 
 export const counterSlice = createSlice({
