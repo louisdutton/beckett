@@ -28,9 +28,9 @@ const Home: NextPage = () => {
 					<TitlePage metadata={metadata} />
 
 					<div className="w-full p-8 print:p-[1in] print:leading-4  max-w-3xl print:max-w-none">
-						<ul>
+						<ul className="mb-8">
 							{blocks.map((block, i) => (
-								<li key={i} className="mb-2 print:mb-4">
+								<li key={i} className="mb-4 print:mb-4">
 									<Line />
 								</li>
 							))}
