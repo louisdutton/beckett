@@ -1,5 +1,5 @@
 import { Users, Gear, MusicNote, Eye } from "phosphor-react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../lib/hooks";
 import IconButton from "./IconButton";
 
 interface Props {
@@ -8,14 +8,14 @@ interface Props {
 }
 
 const Toolbar = () => {
-	// const {} = useSelector((state) => state.)
+	const { title } = useAppSelector((state) => state.metadata);
 
 	return (
 		<header className="sticky top-0 left-0 z-50 w-screen p-2 font-mono shadow-lg bg-primary-500 print:hidden">
 			<div className="flex items-center justify-between">
 				<p className="flex gap-2 px-4 text-sm uppercase text-primary-300">
 					<a href="#act-1" className="hover:text-white">
-						Title
+						{title}
 					</a>
 					<p>/</p>
 					<a href="#act-1" className="hover:text-white">
